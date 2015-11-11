@@ -1,11 +1,14 @@
-meteor-accounts-stripe
+Stripe OAuth Flow for Meteor
 ======================
-
-stripe connect package
-
-Allow users to connect via their stripe account.  
+This package allows OAuth via Stripe API
 
 
-Atmosphere: `https://atmospherejs.com/mrt/accounts-stripe`
+## Install
+```
+$ meteor add accounts-ui
+$ meteor add billyvg:accounts-stripe
+```
 
-TO-DO: add how to use
+## Credits
+Forked from https://github.com/krishamoud/meteor-accounts-stripe and
+split into two different packages
