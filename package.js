@@ -18,5 +18,5 @@ Package.onUse( function (api) {
     api.use('http', ['server']);
 
   	api.addFiles('stripe.js');
-    api.addFIles('stripe_common.js', ['client', 'server']);
+    api.addFiles('stripe_common.js', ['client', 'server']);
 });
