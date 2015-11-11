@@ -1,29 +1,22 @@
 Package.describe({
-    summary: 'Login service for stripe accounts',
-    name: 'accounts-stripe'
+    summary: 'Login service for Stripe accounts',
+    version: '0.1.0',
+    name: 'billyvg:accounts-stripe',
+    git: 'https://github.com/Opstarts/meteor-accounts-stripe.git',
 });
 
 Package.onUse( function (api) {
-    api.versionsFrom('1.2'); 
-    if (api.export) api.export('StripeOAuth');     
+    api.versionsFrom('1.2');
+
+    api.use('underscore', 'server');
     api.use('accounts-base', ['client', 'server']);
     api.imply('accounts-base', ['client', 'server']);
     api.use('accounts-oauth', ['client', 'server']);
-
-		api.use('oauth', ['client', 'server']);
-    api.use('oauth2', ['client', 'server']);
-    api.use('http', ['server']);
-    api.use('underscore', 'server');
-    api.use('templating', 'client');
-    api.use('random', 'client');
     api.use('service-configuration', ['client', 'server']);
-  	
-  	api.addFiles(
-    ['lib/stripe_configure.html', 'lib/stripe_configure.js', 
-    'lib/stripe_login_button.css'],
-    'client');
+    api.use('billyvg:stripe-oauth@0.1.0', ['client', 'server']);
 
-    api.addFiles("lib/accounts_stripe.js");
-    api.addFiles('lib/stripe_client.js', 'client');
-    api.addFiles('lib/stripe_server.js', 'server');
+    api.use('http', ['server']);
+
+  	api.addFiles('stripe.js');
+    api.addFIles('stripe_common.js', ['client', 'server']);
 });
