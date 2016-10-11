@@ -1,22 +1,24 @@
+/* global Package */
+
 Package.describe({
-    summary: 'Login service for Stripe accounts',
-    version: '0.1.0',
-    name: 'billyvg:accounts-stripe',
-    git: 'https://github.com/Opstarts/meteor-accounts-stripe.git',
+  summary: 'Login service for Stripe accounts',
+  version: '0.1.1',
+  name: 'billyvg:accounts-stripe',
+  git: 'https://github.com/Opstarts/meteor-accounts-stripe.git',
 });
 
-Package.onUse( function (api) {
-    api.versionsFrom('1.2');
+Package.onUse(function(api) {
+  api.versionsFrom('1.2');
 
-    api.use('underscore', 'server');
-    api.use('accounts-base', ['client', 'server']);
-    api.imply('accounts-base', ['client', 'server']);
-    api.use('accounts-oauth', ['client', 'server']);
-    api.use('service-configuration', ['client', 'server']);
-    api.use('billyvg:stripe-oauth@0.1.0', ['client', 'server']);
+  api.use('underscore', 'server');
+  api.use('accounts-base', ['client', 'server']);
+  api.imply('accounts-base', ['client', 'server']);
+  api.use('accounts-oauth', ['client', 'server']);
+  api.use('service-configuration', ['client', 'server']);
+  api.use('billyvg:stripe-oauth@0.1.0', ['client', 'server']);
 
-    api.use('http', ['server']);
+  api.use('http', ['server']);
 
-  	api.addFiles('stripe.js');
-    api.addFiles('stripe_common.js', ['client', 'server']);
+  api.addFiles('stripe.js');
+  api.addFiles('stripe_common.js', ['client', 'server']);
 });
