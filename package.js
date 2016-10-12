@@ -2,7 +2,7 @@
 
 Package.describe({
   summary: 'Login service for Stripe accounts',
-  version: '0.1.2',
+  version: '0.1.3',
   name: 'billyvg:accounts-stripe',
   git: 'https://github.com/Opstarts/meteor-accounts-stripe.git',
 });
@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.imply('accounts-base', ['client', 'server']);
   api.use('accounts-oauth', ['client', 'server']);
   api.use('service-configuration', ['client', 'server']);
-  api.use('billyvg:stripe-oauth@0.1.1', ['client', 'server']);
+  api.use('billyvg:stripe-oauth@0.1.2', ['client', 'server']);
 
   api.use('http', ['server']);
 
